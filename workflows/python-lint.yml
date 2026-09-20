@@ -1,0 +1,36 @@
+# This workflow lints Python code, using mise to handle tool installation and Taskfile to handle the rest
+
+name: Python lint
+
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**' # Avoid duplicates: only run the PR, not the push
+      - 'gh-pages' # GitHub Pages do not trigger all tests
+    tags-ignore:
+      - 'v*' # Avoid rerun of existing commit on release
+  pull_request:
+    branches:
+      - 'main'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  lint:
+    if: (github.event_name != 'pull_request' && ! github.event.pull_request.head.repo.fork) || (github.event_name == 'pull_request' && (github.event.pull_request.head.repo.fork || startsWith(github.head_ref, 'dependabot/')))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Install tools
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c
+
+      - name: Install library and dependencies
+        run: task install
+
+      - name: Lint with Ruff
+        run: task lint
