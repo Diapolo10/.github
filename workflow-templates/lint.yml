@@ -1,0 +1,14 @@
+# This generic workflow lints code, using mise to handle tool installation and Taskfile to handle the rest
+
+name: Lint code
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - 'v*' # Avoid re-running existing commit on release
+
+jobs:
+  lint:
+    uses: diapolo10/.github/.github/workflows/lint.yml@v1
