@@ -5,14 +5,14 @@ name: Python lint
 on:
   push:
     branches-ignore:
-      - 'dependabot/**' # Avoid duplicates: only run the PR, not the push
-      - 'gh-pages' # GitHub Pages do not trigger all tests
+      - "dependabot/**" # Avoid duplicates: only run the PR, not the push
+      - "gh-pages" # GitHub Pages do not trigger all tests
     tags-ignore:
-      - 'v*' # Avoid rerun of existing commit on release
+      - "v*" # Avoid rerun of existing commit on release
   pull_request:
     branches:
-      - 'main'
-  workflow-call:
+      - "main"
+  workflow_call:
 
 permissions:
   contents: write
@@ -30,8 +30,8 @@ jobs:
       - name: Install tools
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c
 
-      - name: Install library and dependencies
+      - name: Install dependencies
         run: task install
 
-      - name: Lint with Ruff
+      - name: Run linters
         run: task lint
