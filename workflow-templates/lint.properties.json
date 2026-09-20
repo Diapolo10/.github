@@ -1,0 +1,7 @@
+{
+  "name": "Generic linter",
+  "description": "CI workflow template for linting your codebase. This template is designed to be flexible by delegating tool installation to Mise and linter running to Taskfile.",
+  "iconName": "octigon shield-check",
+  "categories": ["code-quality", "testing", "TOML", "YAML"],
+  "filePatterns": ["mise.toml", "Taskfile.yml"]
+}
