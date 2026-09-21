@@ -1,0 +1,7 @@
+{
+  "name": "Python test runner",
+  "description": "CI workflow template for testing your Python code. This template is designed to be flexible by delegating tool installation to Mise and test running to Taskfile.",
+  "iconName": "octigon checklist",
+  "categories": ["code-quality", "testing", "TOML", "YAML"],
+  "filePatterns": ["\\.?mise\\.(?:local.)?toml$", "[Tt]askfile\\.(?:dist\\.)?y(?:a)?ml"]
+}

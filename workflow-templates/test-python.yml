@@ -1,0 +1,16 @@
+# This workflow tests Python code, using mise to handle tool installation and Taskfile to handle the rest
+
+name: Test Python code
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - 'v*' # Avoid re-running existing commit on release
+
+jobs:
+  lint:
+    uses: diapolo10/.github/.github/workflows/test-python.yml@v1
+    with:
+      python-versions: '["3.11", "3.12", "3.13", "3.14"]'
