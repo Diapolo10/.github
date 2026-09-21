@@ -1,0 +1,15 @@
+# This generic workflow analyses the repository with CodeQL
+
+name: CodeQL analysis
+
+on:
+  push:
+    branches: [ $default-branch ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  codeql:
+    uses: diapolo10/.github/.github/workflows/analyse-codeql.yml@v1
+    with:
+      languages: '["actions", "python"]'
