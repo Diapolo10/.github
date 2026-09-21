@@ -1,0 +1,6 @@
+{
+  "name": "Dependabot PR reviewer",
+  "description": "CI workflow template for reviewing Dependabot pull requests.",
+  "iconName": "octigon dependabot",
+  "categories": ["continuous-integration", "dependency-management"]
+}
