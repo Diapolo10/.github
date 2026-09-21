@@ -1,0 +1,14 @@
+# This workflow automatically creates a GitHub and PyPI release for the project on successful version update
+
+name: Release Python project
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  lint:
+    uses: diapolo10/.github/.github/workflows/publish-python.yml@v1
+    with:
+      python-versions: '["3.11", "3.12", "3.13", "3.14"]'

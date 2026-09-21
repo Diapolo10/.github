@@ -1,0 +1,7 @@
+{
+  "name": "Python release workflow",
+  "description": "CI workflow template for releasing your Python code. This template is designed to be flexible by delegating tool installation to Mise and build management to Taskfile.",
+  "iconName": "octigon upload",
+  "categories": ["continuous-integration", "deployment", "TOML", "YAML"],
+  "filePatterns": ["\\.?mise\\.(?:local.)?toml$", "[Tt]askfile\\.(?:dist\\.)?y(?:a)?ml"]
+}
