@@ -1,0 +1,6 @@
+{
+  "name": "CodeQL analysis",
+  "description": "CI workflow template for analyzing code with CodeQL.",
+  "iconName": "octigon codescan",
+  "categories": ["continuous-integration", "code-quality", "security"]
+}
