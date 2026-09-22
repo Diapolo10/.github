@@ -9,6 +9,6 @@ on:
 
 jobs:
   lint:
-    uses: diapolo10/.github/.github/workflows/publish-python.yml@v1
+    uses: diapolo10/.github/.github/workflows/publish-python.yml@c8ea0e99f7a5a688ae8f39d4f2163387f231ef1c
     with:
       python-versions: '["3.11", "3.12", "3.13", "3.14"]'
