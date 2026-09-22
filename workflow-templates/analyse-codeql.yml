@@ -3,13 +3,13 @@
 name: CodeQL analysis
 
 on:
-  push:
+  pull_request:
     branches: [ $default-branch ]
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
   codeql:
-    uses: diapolo10/.github/.github/workflows/analyse-codeql.yml@v1
+    uses: diapolo10/.github/.github/workflows/analyse-codeql.yml@c8ea0e99f7a5a688ae8f39d4f2163387f231ef1c
     with:
       languages: '["actions", "python"]'
