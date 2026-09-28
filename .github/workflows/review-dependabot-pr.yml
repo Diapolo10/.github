@@ -2,7 +2,10 @@
 
 name: Review Dependabot PRs
 
-on: workflow_call
+on:
+  workflow_call:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: write
