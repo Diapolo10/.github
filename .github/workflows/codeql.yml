@@ -7,16 +7,19 @@ on:
     inputs:
       languages:
         description: 'A stringified JSON array of languages to analyse, e.g. ["python"]'
-        default: '["actions", "python"]'
+        default: '["actions"]'
         type: string
+  pull_request_target:
+    types: [opened, reopened, synchronize]
 
 jobs:
   analyse:
     name: Analyse ${{ matrix.language }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
       actions: read
       contents: read
+      packages: read
       security-events: write
 
     strategy:
