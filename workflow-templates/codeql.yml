@@ -1,0 +1,21 @@
+# This generic workflow analyses the repository with CodeQL
+
+name: CodeQL analysis
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  actions: read
+  contents: read
+  packages: read
+  security-events: write
+
+jobs:
+  codeql:
+    uses: diapolo10/.github/.github/workflows/codeql.yml@v2
+    with:
+      languages: '["actions"]'
